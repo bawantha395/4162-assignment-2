@@ -10,10 +10,10 @@ os.makedirs('images', exist_ok=True)
 img_size = 150
 img = np.zeros((img_size, img_size), dtype=np.uint8)  # Background = 0
 
-# 1️⃣ Draw Object 1: Square (gray value 128) in top-left
+# Draw Object 1: Square (gray value 128) 
 cv2.rectangle(img, (20, 20), (60, 60), 128, -1)
 
-# 2️⃣ Draw Object 2: Circle (gray value 255) in bottom-right
+# Draw Object 2: Circle (gray value 255) 
 cv2.circle(img, (110, 110), 25, 255, -1)
 
 # Add Gaussian noise
@@ -22,7 +22,7 @@ stddev = 20
 noise = np.random.normal(mean, stddev, img.shape).astype(np.int16)
 noisy_img = np.clip(img.astype(np.int16) + noise, 0, 255).astype(np.uint8)
 
-# Optional: Smooth it
+
 smoothed = cv2.GaussianBlur(noisy_img, (5, 5), 0)
 
 # Apply Otsu's threshold
