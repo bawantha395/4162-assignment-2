@@ -21,7 +21,7 @@
 
 3. Run region growing:
    ```
-   python question1.py
+   python question2.py
    ```
 
 4. Check the `images/` folder for results.
